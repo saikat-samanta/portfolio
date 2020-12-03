@@ -15,7 +15,6 @@ function nextPage(page) {
         page_2: 2,
         page_3: 3
     };
-    console.log(zIndex[page]);
     document.querySelector(`.${page}`).classList.add('turn');
     document.querySelector(`.${page}`).setAttribute('style', `z-index: ${zIndex[page]}`);
     videoPause();
@@ -23,7 +22,6 @@ function nextPage(page) {
 
 
 function prevPage(page) {
-    console.log(`this is prev ${page}`);
     document.querySelector(`.${page}`).classList.remove('turn');
     setTimeout(() => document.querySelector(`.${page}`).setAttribute('style', `z-index: unset`), 600);
     videoPause();
@@ -39,11 +37,20 @@ function closeBook() {
 }
 
 function checkMediaQuery() {
-    if (window.innerWidth < 630) {
-        document.querySelector('body').style.display = "none";
-        alert('Display size < 640px. Please rotate your device');
-    } else {
-        document.querySelector('body').style.display = "flex";
+    if(navigator.userAgent.includes('Linux') || navigator.userAgent.includes('iPhone')){
+        if (window.innerWidth < 1280 && window.innerHeight < 720) {
+            document.querySelector('body').style.display = "none";
+            alert('1280x720 display needed. Please rotate your device');
+        } else {
+            document.querySelector('body').style.display = "flex";
+        }
+    }else {
+        if (window.innerWidth < 640) {
+            document.querySelector('body').style.display = "none";
+            alert('Display size < 640px. please use larger display');
+        } else {
+            document.querySelector('body').style.display = "flex";
+        }
     }
 }
 window.addEventListener('resize', checkMediaQuery);
