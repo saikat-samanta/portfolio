@@ -42,7 +42,7 @@ function checkMediaQuery() {
         if (window.innerWidth < 640) {
             console.log(window.innerWidth, window.innerHeight);
             document.querySelector('body').style.display = "none";
-            if (window.innerHeight > 562) {
+            if (window.innerHeight >= 640) {
                 alert('Please rotate your device');
             }
         } else {
