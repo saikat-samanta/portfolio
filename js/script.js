@@ -1,6 +1,7 @@
 //jshint esversion: 9
 window.addEventListener('load', () => {
     document.querySelector('.loadingio-spinner-reload-g09deovx6dd').setAttribute(`style`, `display: none;`);
+    checkMediaQuery();
 });
 
 function videoPause() {
@@ -38,9 +39,9 @@ function closeBook() {
 
 function checkMediaQuery() {
     if(navigator.userAgent.includes('Linux') || navigator.userAgent.includes('iPhone')){
-        if (window.innerWidth < 1280 && window.innerHeight < 720) {
+        if (window.innerWidth < 640) {
             document.querySelector('body').style.display = "none";
-            alert('1280x720 display needed. Please rotate your device');
+            alert('Please rotate your device');
         } else {
             document.querySelector('body').style.display = "flex";
         }
