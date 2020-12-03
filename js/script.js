@@ -41,12 +41,12 @@ function checkMediaQuery() {
     if(navigator.userAgent.includes('Linux') || navigator.userAgent.includes('iPhone')){
         if (window.innerWidth < 640) {
             document.querySelector('body').style.display = "none";
-            alert('Please rotate your device');
+            (window.innerHeight >= 640 )? alert('Please rotate your device') : alert('Browser is not supported');
         } else {
-            document.querySelector('body').style.display = "flex";
+            (window.innerHeight >= 360 )? document.querySelector('body').style.display = "flex" : alert('Browser is not supported');
         }
     }else {
-        if (window.innerWidth < 640) {
+        if (window.innerWidth < 640 || window.innerHeight < 360) {
             document.querySelector('body').style.display = "none";
             alert('Display size < 640px. please use larger display');
         } else {
