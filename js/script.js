@@ -38,15 +38,13 @@ function closeBook() {
 }
 
 function checkMediaQuery() {
-    if (navigator.userAgent.includes('Linux') || navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('Windows Phone')) {
+    if (navigator.userAgent.includes('Linux') || navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('Windows Phone') || navigator.userAgent.includes('iPad')) {
         if (window.innerWidth < 640) {
-            console.log(window.innerWidth, window.innerHeight);
             document.querySelector('body').style.display = "none";
             if (window.innerHeight >= 640) {
                 alert('Please rotate your device');
             }
         } else {
-            console.log(window.innerWidth, window.innerHeight);
             if (window.innerHeight < 360) {
                 document.querySelector('body').style.display = "none";
                 alert('Browser is not supported');
