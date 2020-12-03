@@ -51,7 +51,7 @@ function checkMediaQuery() {
             }
         }
     }else {
-        if (window.innerWidth < 640 || window.innerHeight < 360) {
+        if (window.innerWidth < 850 || window.innerHeight < 570) {
             document.querySelector('body').style.display = "none";
             alert('Display size < 640px. please use larger display');
         } else {
