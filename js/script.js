@@ -49,7 +49,7 @@ function checkMediaQuery() {
             console.log(window.innerWidth, window.innerHeight);
             if (window.innerHeight < 360) {
                 document.querySelector('body').style.display = "none";
-                alert('Browser is not supported width match');
+                alert('Browser is not supported');
             } else {
                 document.querySelector('body').style.display = "flex";
             }
