@@ -43,7 +43,12 @@ function checkMediaQuery() {
             document.querySelector('body').style.display = "none";
             (window.innerHeight >= 640 )? alert('Please rotate your device') : alert('Browser is not supported');
         } else {
-            (window.innerHeight >= 360 )? document.querySelector('body').style.display = "flex" : document.querySelector('body').style.display = "none"; alert('Browser is not supported');
+            if (window.innerHeight >= 360 ){
+                document.querySelector('body').style.display = "flex"
+            }else {
+                document.querySelector('body').style.display = "none";
+                alert('Browser is not supported');
+            }
         }
     }else {
         if (window.innerWidth < 640 || window.innerHeight < 360) {
