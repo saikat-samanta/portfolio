@@ -62,7 +62,7 @@ function checkMediaQuery() {
     } else {
       if (window.innerHeight < 425) {
         document.querySelector("body").style.display = "none";
-        alert("Browser is not supported");
+        alert("Please use larger display");
       } else {
         document.querySelector("body").style.display = "flex";
       }
